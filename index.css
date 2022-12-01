@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+
+:root {
+    --theme-main-color: #34E0BD;
+    --theme-secondary-color: #A433CC;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+ }
+
+ .vp-controll {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+ }
+
+ main {
+    flex: 1;
+ }
+
+
+body {
+    background: #222222;
+}
+
+/* Headder Style*/
+header {
+    background: #222222;
+}
+
+
+.name-logo{
+    text-align: center;
+}
+
+.name-logo a{
+    text-decoration: none;
+    letter-spacing: 0.2em;
+    color: var(--theme-main-color)
+}
+
+.hamMenu {
+    padding: 2% 0;
+    background: green;
+    width: 100%;
+}
+
+.hamMenu-check {
+    appearance: none;
+    display: block;
+    margin: auto;
+    
+    padding: 1em 1.25em;
+    cursor: pointer;
+    /* border: 1px solid red;
+    background: white; */
+    -webkit-tap-highlight-color: transparent;
+}
+
+.hamMenu-check::before{
+    content: '✕';
+    font-size: 2em;
+    font-weight: bolder;
+    text-align: center;
+}
+
+.hamMenu input:checked::before {
+    content: '☰';
+}
+
+.hamMenu-check .hamMenu-check-bars{
+    margin-bottom: 1px solid black;
+}
+
+.hamMenu input:checked ~ .hamMenu-itens {
+    height: 0;
+    /* transform: scale(0); */
+    
+    
+}
+
+.hamMenu-itens {
+    display: flex;
+    flex-direction: column;
+    height: 25vh;
+    max-height: 100%;
+
+    overflow: hidden;
+
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Segoe UI';
+    font-weight: bold;
+
+    background: peru;
+
+    transition: height 0.5s, transform 0.001s;
+}
+
+.hamMenu-itens > a{
+    padding: 0.5em 0;
+    text-decoration: none;
+    border: 1px solid black;
+}
