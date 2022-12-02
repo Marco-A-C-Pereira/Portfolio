@@ -258,7 +258,7 @@ header {
     overflow: hidden;
 
     background-image: 
-    url(/assets/images/MarcoAPMini.jpg),
+    url(assets\images\MarcoAPMini.jpg),
     linear-gradient(
         90deg,
         hsl(168deg 74% 54%) 0%,
