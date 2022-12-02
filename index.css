@@ -1,8 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto+Condensed&display=swap');
 
 :root {
     --theme-main-color: #34E0BD;
     --theme-secondary-color: #A433CC;
+
+    --main-bg: #222222;
+    --secondary-bg: #252525;
 }
 
 * {
@@ -23,18 +26,34 @@
  }
 
 
-body {
-    background: #222222;
+section {
+    padding: 2vh 1vw;
+    width: 100%;
+    background: var(--main-bg);
 }
+
+section:nth-child(2n) {
+    background: var(--secondary-bg);
+}
+
+section, .section-shadow{ 
+    /* box-shadow: 0px 1px 2px var(--theme-main-color); */
+    border-bottom: 0.1vh solid #34e0be;
+}
+
 
 /* Headder Style*/
 header {
     background: #222222;
+    z-index: 1000;
 }
 
 
 .name-logo{
+    padding: 2vh 0 1.5vh;
     text-align: center;
+    font-family: 'Roboto Condensed';
+    background: black;
 }
 
 .name-logo a{
@@ -44,8 +63,9 @@ header {
 }
 
 .hamMenu {
-    padding: 2% 0;
-    background: green;
+    padding: 2% 0 0;
+    background: 
+    linear-gradient(180deg, rgba(0,0,0,1) 0%, var(--theme-secondary-color) 25%);
     width: 100%;
 }
 
@@ -54,40 +74,32 @@ header {
     display: block;
     margin: auto;
     
-    padding: 1em 1.25em;
+    padding: 0.5em 1.25em;
     cursor: pointer;
-    /* border: 1px solid red;
-    background: white; */
     -webkit-tap-highlight-color: transparent;
 }
 
 .hamMenu-check::before{
-    content: '✕';
-    font-size: 2em;
+    content: '☰';
+    color:white;
+    text-shadow: 1px 1px 5px var(--theme-main-color);
+    font-size: 1.5em;
     font-weight: bolder;
     text-align: center;
 }
 
 .hamMenu input:checked::before {
-    content: '☰';
-}
-
-.hamMenu-check .hamMenu-check-bars{
-    margin-bottom: 1px solid black;
+    content: '✕';
 }
 
 .hamMenu input:checked ~ .hamMenu-itens {
-    height: 0;
-    /* transform: scale(0); */
-    
-    
+    max-height: 50vh;
 }
 
 .hamMenu-itens {
     display: flex;
     flex-direction: column;
-    height: 25vh;
-    max-height: 100%;
+    max-height: 0;
 
     overflow: hidden;
 
@@ -95,14 +107,165 @@ header {
     text-transform: uppercase;
     font-family: 'Segoe UI';
     font-weight: bold;
+    text-shadow: 1px 1px 5px var(--theme-main-color);
 
-    background: peru;
+    background: var(--theme-secondary-color);
 
-    transition: height 0.5s, transform 0.001s;
+    transition: max-height 0.5s, transform 0.001s;
 }
 
 .hamMenu-itens > a{
+    color:white;
     padding: 0.5em 0;
     text-decoration: none;
-    border: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+/* Main - Start  */
+
+#start {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-family: 'Roboto Condensed';
+    color: white;
+
+    padding: 2vh 0 4vh;
+}
+
+#start h1 {
+    letter-spacing: 0.1em;
+    margin-top: 3vh;
+    line-height: 70%;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    color: var(--theme-main-color)
+}
+
+#start h2 {
+    color: white;
+    font-size: 1.4rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 0.10em solid var(--theme-main-color);
+    margin: 0 auto;
+    animation: 
+    coding 2.0s steps(22, end),
+    cursor-blink .5s step-end infinite;
+}
+
+@keyframes coding {
+    from { width: 0; }
+    to   { width: 100% }
+}
+
+@keyframes cursor-blink {
+    from, to { border-color: transparent;}
+    50% { border-color: var(--theme-main-color) ;}
+}
+
+.btn-cont {
+    display: flex;
+    justify-content: space-around;
+
+    margin-top: 5vh;
+}
+
+.btn-cont a {
+    padding: 2.0vh 5vw;
+    border-radius: 50px;
+    font-family: 'Segoe UI';
+    color: white;
+    font-size: 1.1em;
+    font-weight: bold;
+    text-decoration: none;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+
+    display: flex;
+    gap: 1vw;
+
+    border: 0.75vh double transparent;
+    
+    background-origin:border-box ;
+    background-clip: padding-box, border-box;
+    background-size: 400%;
+    
+    animation: btn-move 3.5s ease infinite;
+}
+
+@keyframes btn-move {
+ 0%   { background-position: 0 50%; }
+ 50%  { background-position: 100% 50%;}
+ 100% { background-position: 0 50%;}
+}
+
+.btn-in {
+    fill: #007bb5;
+    background-image: 
+    linear-gradient(#222222, #222222),
+    linear-gradient(
+        45deg,
+        hsl(199deg 100% 35%) 0%,
+        hsl(196deg 100% 39%) 55%,
+        hsl(193deg 100% 41%) 69%,
+        hsl(188deg 100% 42%) 76%,
+        hsl(182deg 100% 42%) 81%,
+        hsl(174deg 100% 44%) 85%,
+        hsl(166deg 92% 50%) 100%
+    );
+}
+
+.btn-git{
+    fill: #c9510c;
+    background-image: 
+    linear-gradient(#222222, #222222),
+    linear-gradient(
+        45deg,
+        hsl(22deg 89% 42%) 0%,
+        hsl(20deg 92% 41%) 55%,
+        hsl(19deg 95% 40%) 69%,
+        hsl(16deg 97% 39%) 76%,
+        hsl(14deg 98% 39%) 81%,
+        hsl(10deg 98% 39%) 85%,
+        hsl(4deg 98% 38%) 100%
+    );
+}
+
+/* WhoAmI */
+
+#whoAmI{
+    width: 100%;
+    color: white;
+    font-family: 'Open Sans';
+    text-align: justify;
+    font-size: 1.1rem;
+
+    padding: 2vh 5vw 4vh;
+}
+
+#whoAmI h1 {
+    font-family: 'Roboto Condensed';
+    text-transform: uppercase;
+    text-shadow: 1px 1px  var(--theme-main-color);   
+    text-align: center;
+    font-size: 1.9rem;
+    margin-bottom: 1vh;
+}
+
+.pfp-wrapper{
+    width: 35vh;
+    height: 35vh;
+    border-radius: 50%;
+    border: 1vh solid var(--theme-main-color); 
+    overflow: hidden;
+
+    background-image: url(/assets/images/MarcoAPMini.jpg);
+    background-size: 100%;
+
+    display: block;
+    margin: 0 auto 3vh;
 }
