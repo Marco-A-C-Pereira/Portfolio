@@ -194,13 +194,7 @@ header {
     background-clip: padding-box, border-box;
     background-size: 400%;
     
-    animation: btn-move 3.5s ease infinite;
-}
-
-@keyframes btn-move {
- 0%   { background-position: 0 50%; }
- 50%  { background-position: 100% 50%;}
- 100% { background-position: 0 50%;}
+    animation: grad-move 3.5s ease infinite;
 }
 
 .btn-in {
@@ -260,12 +254,35 @@ header {
     width: 35vh;
     height: 35vh;
     border-radius: 50%;
-    border: 1vh solid var(--theme-main-color); 
+    border: 1vh solid transparent; 
     overflow: hidden;
 
-    background-image: url(/assets/images/MarcoAPMini.jpg);
-    background-size: 100%;
+    background-image: 
+    url(/assets/images/MarcoAPMini.jpg),
+    linear-gradient(
+        90deg,
+        hsl(168deg 74% 54%) 0%,
+        hsl(176deg 100% 42%) 26%,
+        hsl(182deg 100% 42%) 39%,
+        hsl(186deg 100% 44%) 50%,
+        hsl(190deg 100% 44%) 61%,
+        hsl(193deg 99% 45%) 74%,
+        hsl(200deg 72% 56%) 100%
+    );
+    background-size: 100% , 400%;
+    background-origin: padding-box, border-box;
+    background-clip:   padding-box, border-box;
+    animation: grad-move 3.5s ease infinite;
+
 
     display: block;
     margin: 0 auto 3vh;
 }
+
+/* Shared */
+
+@keyframes grad-move {
+    0%   { background-position: 0 50%; }
+    50%  { background-position: 100% 50%;}
+    100% { background-position: 0 50%;}
+   }
