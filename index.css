@@ -15,6 +15,11 @@
     box-sizing: border-box;
  }
 
+ a {
+    color: inherit;
+    text-decoration: none;
+ }
+
  .vp-controll {
     display: flex;
     flex-direction: column;
@@ -57,7 +62,6 @@ header {
 }
 
 .name-logo a{
-    text-decoration: none;
     letter-spacing: 0.2em;
     color: var(--theme-main-color)
 }
@@ -117,7 +121,6 @@ header {
 .hamMenu-itens > a{
     color:white;
     padding: 0.5em 0;
-    text-decoration: none;
     border-bottom: 1px solid black;
 }
 
@@ -181,7 +184,6 @@ header {
     color: white;
     font-size: 1.1em;
     font-weight: bold;
-    text-decoration: none;
     letter-spacing: 0.1em;
     cursor: pointer;
 
@@ -288,7 +290,7 @@ header {
     
 }
 
-#skills h1, h2{
+#skills h1, #skills h2{
     text-transform: uppercase;
     text-shadow: 1px 1px  var(--theme-main-color);   
     
@@ -354,6 +356,143 @@ header {
     transition: opacity 1s, top 0.5s;
 }
 
+/* Projetos */
+
+#projects {
+    width: 100%;
+    color: white;
+    font-family: 'Open Sans';
+    text-align: justify;
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+#projects h1{
+    text-transform: uppercase;
+    text-shadow: 1px 1px  var(--theme-main-color);   
+    font-size: 1.9rem;
+    letter-spacing: 0.1em;
+
+    margin-bottom: 2vh;
+}
+
+.project-menu {
+    width: 90%;
+    margin: auto;
+
+    display: flex;
+    justify-content: center;
+}
+
+.project-menu-label {
+    width: 100%;
+    padding: 1vh 0.5vh;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    border: 5px solid blue;
+}
+
+.project-menu input[type=radio]:checked+label {
+    background: red;
+}
+
+.project-menu input{
+    display: none;
+}
+
+.project-list{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 8vh;
+
+    position: relative;
+}
+
+#project-perso-list {
+   
+}
+
+#project-work-list{
+    
+}
+
+.project-card{
+    margin: auto;
+    width: 85%;
+    border-radius: 25px;
+    position: relative;
+
+    color: black;
+    font-size: 1rem;
+   
+    border: 1vh solid transparent; 
+    overflow: hidden;
+    background-image: 
+    linear-gradient(
+        90deg,
+        hsl(168deg 74% 54%) 0%,
+        hsl(176deg 100% 42%) 26%,
+        hsl(182deg 100% 42%) 39%,
+        hsl(186deg 100% 44%) 50%,
+        hsl(190deg 100% 44%) 61%,
+        hsl(193deg 99% 45%) 74%,
+        hsl(200deg 72% 56%) 100%
+    );
+    background-size: 400%;
+    background-origin: border-box;
+    background-clip:  border-box;
+    animation: grad-move 3.5s ease infinite;
+}
+
+.project-card-title {
+    background: rgb(166, 165, 165);
+    min-height: 3.5vh;
+}
+
+.project-card-wip{
+    font-size: 1.1rem;
+    letter-spacing: 0.2rem;
+    font-weight: bold;
+    height: 20vh;
+    text-transform: uppercase;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.project-card-wip::after{
+    content: "EM PROGRESSO...";
+    
+}
+
+.project-card-body {
+    background: rgb(227, 227, 227);
+    
+    padding: 1.5vh 5%;
+    font-weight: 500;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1vh;
+}
+
+.project-card-tags-vanilla{
+    padding: 0.2rem 0.7rem;
+    background: #F3E5AB;
+    font-weight: bold;
+    border-radius: 50px;
+    box-shadow: 1px 0 5px rgba(0, 0, 0, 0.159);
+}
+
+.project-card-tags-angular{
+    padding: 0.2rem 0.7rem;
+    background: #DD1B16;
+    font-weight: bold;
+    border-radius: 50px;
+    box-shadow: 1px 0 5px rgba(0, 0, 0, 0.159);
+}
 
 /* Shared */
 
