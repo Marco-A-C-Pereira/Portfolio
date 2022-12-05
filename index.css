@@ -382,38 +382,53 @@ header {
 
     display: flex;
     justify-content: center;
+
+    /* gap: 5vh; */
 }
 
-.project-menu-label {
-    width: 100%;
-    padding: 1vh 0.5vh;
+.project-menu > a {
+    /* background: red; */
+    padding: 0.5rem 2rem;
+    font-size: 1.4rem;
+    text-shadow: 0 1px 3px var(--theme-main-color);
     text-transform: uppercase;
-    letter-spacing: 0.2em;
-    border: 5px solid blue;
 }
 
-.project-menu input[type=radio]:checked+label {
+.project-menu > a:active{
     background: red;
 }
 
-.project-menu input{
+.project-list{
+    margin-top: 3vh;
+}
+
+.project-list h2 {
+    text-transform: uppercase;
+    font-size: 1rem;
+    letter-spacing: 0.2rem;
+}
+
+.slides{
+    display: flex;
+
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+} 
+
+.slides::-webkit-scrollbar {
     display: none;
 }
 
-.project-list{
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: 8vh;
+.slides > article {    
+    flex-shrink: 0;
+    width: 100vw;
 
-    position: relative;
+    margin-right: 50px;
 }
 
-#project-perso-list {
-   
-}
-
-#project-work-list{
-    
+.slides > article > div {
+    margin-bottom: 3vh;
 }
 
 .project-card{
@@ -424,6 +439,7 @@ header {
 
     color: black;
     font-size: 1rem;
+    cursor: pointer;
    
     border: 1vh solid transparent; 
     overflow: hidden;
