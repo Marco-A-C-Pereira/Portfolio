@@ -4,6 +4,14 @@ window.onload = () => {
     jobList.style.height = `${ITHeight}px`;
 }
 
+// Só consegui fazer funcionar guardando o valor da height em uma const, se pego direto
+// o valor sofre mutação.
+function fitContent(anchor, targetDiv, elementOneID, elementOneHeight, elementTwoHeight){
+    let sameID = anchor.getAttribute("href").includes(elementOneID);
+    let elementHeight =  sameID ? elementOneHeight : elementTwoHeight;
+    
+    targetDiv.style.height = `${elementHeight}px`
+}
 
 const projectOptions = document.querySelectorAll(".project-menu > a")
 projectOptions.forEach(a => {
@@ -43,18 +51,3 @@ jobHistoryOptions.forEach(a => {
     })
 })
 
-// const jobList =  document.getElementsByClassName("job-contents")[0];
-// jobList.addEventListener('load', () => {
-//     const ITHeight =  document.getElementById("job-IT").scrollHeight;
-//     console.log("sus")
-//     jobList.style.height = `${ITHeight}px`;
-// } )
-
-// Só consegui fazer funcionar guardando o valor da height em uma const, se pego direto
-// o valor sofre mutação.
-function fitContent(anchor, targetDiv, elementOneID, elementOneHeight, elementTwoHeight){
-    let sameID = anchor.getAttribute("href").includes(elementOneID);
-    let elementHeight =  sameID ? elementOneHeight : elementTwoHeight;
-    
-    targetDiv.style.height = `${elementHeight}px`
-}

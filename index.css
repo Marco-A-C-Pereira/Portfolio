@@ -5,7 +5,7 @@
     --theme-secondary-color: #A433CC;
 
     --main-bg: #222222;
-    --secondary-bg: #252525;
+    --secondary-bg: #272727;
 }
 
 * {
@@ -164,31 +164,19 @@ header {
     font-size: 1.4rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    position: relative;
 
     overflow: hidden;
     white-space: nowrap;
     border-right: 0.10em solid var(--theme-main-color);
     margin: 0 auto;
     animation: 
-    coding 2.0s steps(40, end),
+    coding 2.0s steps(23, end),
     cursor-blink .5s step-end infinite;
 }
 
-
-#start h2::before{
-    content: '';
-    background: red;
-    
-   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
 @keyframes coding {
-    from { width: 0; }
-    to   { width: 50% }
+    from { max-width: 0%; }
+    to   { max-width: 100%; }
 }
 
 @keyframes cursor-blink {
@@ -200,6 +188,7 @@ header {
     display: flex;
     justify-content: space-around;
 
+    width: 90%;
     margin-top: 5vh;
 }
 
@@ -384,7 +373,7 @@ header {
     height: 100%;
     width: 100%;
     
-    font-size: 0.9rem;
+    font-size: 1.1rem;
     color: black;
     font-weight: bold;
     letter-spacing: 1px;
@@ -458,7 +447,7 @@ header {
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
-    touch-action: none;
+    /* touch-action: none; */
 } 
 
 .slides::-webkit-scrollbar {
@@ -472,6 +461,10 @@ header {
     margin-right: 50px;
 }
 
+.slides > article:last-child {
+    margin-right: 0;
+}
+
 .slides > article > div {
     margin-bottom: 3.5vh;
 }
@@ -480,7 +473,6 @@ header {
     margin: auto;
     width: 85%;
     border-radius: 25px;
-    position: relative;
 
     color: black;
     font-size: 1rem;
@@ -488,16 +480,16 @@ header {
    
     overflow: hidden;
     
-    
+    box-shadow: 0px 1px 5px var(--theme-main-color);
 }
 
 .project-card-title {
-    background: rgb(100, 100, 100);
+    background: rgb(110, 110, 110);
     min-height: 3.5vh;
 }
 
 .project-card-wip{
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     letter-spacing: 0.2rem;
     font-weight: bold;
     height: 20vh;
@@ -527,7 +519,7 @@ header {
 
 .project-card-tags-vanilla{
     padding: 0.2rem 0.7rem;
-    background: #F3E5AB;
+    background: #F3E5AB;;
     font-weight: bold;
     border-radius: 50px;
     box-shadow: 1px 0 5px rgba(0, 0, 0, 0.159);
@@ -554,12 +546,12 @@ header {
     display: flex;
     flex-direction: column;
     text-align: center;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
 }
 
 .job-nav > a {
     margin-bottom: 1.5vh;
-    
+    cursor: pointer;
 }
 
 .job-nav > a:last-child { margin-bottom: none; }
@@ -579,6 +571,8 @@ header {
     overflow-y: auto;
     scroll-snap-type: Y mandatory;
     scroll-behavior: smooth;   
+
+    transition: max-height 0.25s ease-in;
 }
 
 .job-contents > div::-webkit-scrollbar {
@@ -594,9 +588,6 @@ header {
     flex-direction: column;
     gap: 25vh;
     overflow-y: hidden;
-    scroll-snap-type: Y mandatory;
-
-    /* scroll-behavior: smooth;    */
 }
 
 
