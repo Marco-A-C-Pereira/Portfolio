@@ -13,6 +13,8 @@
     margin: 0;
     border: 0;
     box-sizing: border-box;
+
+    scroll-behavior: smooth;
  }
 
  a {
@@ -32,7 +34,7 @@
 
 
 section {
-    padding: 2vh 1vw;
+    padding: 5vh 1vw;
     width: 100%;
     background: var(--main-bg);
 }
@@ -69,7 +71,17 @@ header {
 .hamMenu {
     padding: 2% 0 0;
     background: 
-    linear-gradient(180deg, rgba(0,0,0,1) 0%, var(--theme-secondary-color) 25%);
+    linear-gradient(
+        0deg,
+        hsl(284deg 60% 50%) 0%,
+        hsl(285deg 77% 41%) 23%,
+        hsl(285deg 100% 32%) 33%,
+        hsl(282deg 100% 28%) 42%,
+        hsl(279deg 100% 24%) 51%,
+        hsl(273deg 100% 20%) 64%,
+        hsl(0deg 0% 0%) 99%
+      
+    );
     width: 100%;
 }
 
@@ -113,7 +125,7 @@ header {
     font-weight: bold;
     text-shadow: 1px 1px 5px var(--theme-main-color);
 
-    background: var(--theme-secondary-color);
+ 
 
     transition: max-height 0.5s, transform 0.001s;
 }
@@ -132,6 +144,7 @@ header {
     text-align: center;
     font-family: 'Roboto Condensed';
     color: white;
+     align-items: center;
 
     padding: 2vh 0 4vh;
 }
@@ -145,24 +158,37 @@ header {
     color: var(--theme-main-color)
 }
 
+
 #start h2 {
     color: white;
     font-size: 1.4rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
+    position: relative;
 
     overflow: hidden;
     white-space: nowrap;
     border-right: 0.10em solid var(--theme-main-color);
     margin: 0 auto;
     animation: 
-    coding 2.0s steps(22, end),
+    coding 2.0s steps(40, end),
     cursor-blink .5s step-end infinite;
+}
+
+
+#start h2::before{
+    content: '';
+    background: red;
+    
+   position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 @keyframes coding {
     from { width: 0; }
-    to   { width: 100% }
+    to   { width: 50% }
 }
 
 @keyframes cursor-blink {
@@ -178,7 +204,7 @@ header {
 }
 
 .btn-cont a {
-    padding: 2.0vh 5vw;
+    padding: 1.5vh 4vw;
     border-radius: 50px;
     font-family: 'Segoe UI';
     color: white;
@@ -243,6 +269,13 @@ header {
     padding: 2vh 5vw 4vh;
 }
 
+#whoAmI article{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
 #whoAmI h1 {
     font-family: 'Roboto Condensed';
     text-transform: uppercase;
@@ -299,7 +332,7 @@ header {
 }
 
 #skills h2 {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     letter-spacing: normal;
     margin: 2vh 0;
 
@@ -310,13 +343,19 @@ header {
     flex-wrap: wrap;
     gap: 2em;
     justify-content: center;
+    margin-bottom: 7vh;
+}
+
+.skill-container:last-child{
+    margin-bottom: 0vh;
 }
 
 .skill-card {
-    width: 20vh;
-    height: 20vh;
+    width: 16vh;
+    height: 16vh;
     position: relative;
-    overflow: hidden
+    overflow: hidden;
+    
 }
 
 .skill-card-label {
@@ -367,6 +406,10 @@ header {
     text-align: center;
 }
 
+#projects article {
+    height: 100%;
+}
+
 #projects h1{
     text-transform: uppercase;
     text-shadow: 1px 1px  var(--theme-main-color);   
@@ -382,12 +425,9 @@ header {
 
     display: flex;
     justify-content: center;
-
-    /* gap: 5vh; */
 }
 
 .project-menu > a {
-    /* background: red; */
     padding: 0.5rem 2rem;
     font-size: 1.4rem;
     text-shadow: 0 1px 3px var(--theme-main-color);
@@ -400,6 +440,10 @@ header {
 
 .project-list{
     margin-top: 3vh;
+    overflow: hidden;
+
+    max-height: 1500px;
+    transition: max-height 0.25s ease-in;
 }
 
 .project-list h2 {
@@ -414,6 +458,7 @@ header {
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
+    touch-action: none;
 } 
 
 .slides::-webkit-scrollbar {
@@ -428,7 +473,7 @@ header {
 }
 
 .slides > article > div {
-    margin-bottom: 3vh;
+    margin-bottom: 3.5vh;
 }
 
 .project-card{
@@ -441,27 +486,13 @@ header {
     font-size: 1rem;
     cursor: pointer;
    
-    border: 1vh solid transparent; 
     overflow: hidden;
-    background-image: 
-    linear-gradient(
-        90deg,
-        hsl(168deg 74% 54%) 0%,
-        hsl(176deg 100% 42%) 26%,
-        hsl(182deg 100% 42%) 39%,
-        hsl(186deg 100% 44%) 50%,
-        hsl(190deg 100% 44%) 61%,
-        hsl(193deg 99% 45%) 74%,
-        hsl(200deg 72% 56%) 100%
-    );
-    background-size: 400%;
-    background-origin: border-box;
-    background-clip:  border-box;
-    animation: grad-move 3.5s ease infinite;
+    
+    
 }
 
 .project-card-title {
-    background: rgb(166, 165, 165);
+    background: rgb(100, 100, 100);
     min-height: 3.5vh;
 }
 
@@ -483,7 +514,7 @@ header {
 }
 
 .project-card-body {
-    background: rgb(227, 227, 227);
+    background: rgb(150, 150, 150);
     
     padding: 1.5vh 5%;
     font-weight: 500;
@@ -509,6 +540,143 @@ header {
     border-radius: 50px;
     box-shadow: 1px 0 5px rgba(0, 0, 0, 0.159);
 }
+
+/* JOBS */
+
+#jobs {
+    padding: 5vh 5%;
+    font-family: 'Roboto Condensed';
+    color: white;
+    overflow: hidden;
+}
+
+.job-nav {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.job-nav > a {
+    margin-bottom: 1.5vh;
+    
+}
+
+.job-nav > a:last-child { margin-bottom: none; }
+
+
+.job-contents {
+    overflow: hidden;
+    height: 80vh;
+    background: linear-gradient(var(--main-bg), #2626264d);
+}
+
+.job-contents > div {
+    flex-shrink: 0;
+    /* height: 100%; */
+    width: 100%; 
+    
+    overflow-y: auto;
+    scroll-snap-type: Y mandatory;
+    scroll-behavior: smooth;   
+}
+
+.job-contents > div::-webkit-scrollbar {
+    display: none;
+}
+
+.job-contents > div:last-child {
+    margin-bottom: 0;
+}
+
+.job-slides {
+    display: flex;
+    flex-direction: column;
+    gap: 25vh;
+    overflow-y: hidden;
+    scroll-snap-type: Y mandatory;
+
+    /* scroll-behavior: smooth;    */
+}
+
+
+
+.job-exp-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: justify;
+
+    margin-top: 2vh;
+}
+
+.job-exp-wrapper > h3 {
+    font-size: 1.4rem;
+    letter-spacing: 0.1em;
+    margin-bottom: 1vh;
+}
+
+.job-exp-wrapper > h3 > span {
+    font-size: 1.5rem;
+    text-shadow: 1px 1px 4px var(--theme-main-color);   
+}
+
+.job-exp-wrapper > h4 {
+    font-size: 1.2em;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 1.3vh;
+}
+
+.job-exp-wrapper > p {
+    text-shadow: none;
+    font-family: 'Segoe UI';
+    letter-spacing: 0.1rem;
+}
+
+.download-button {
+    margin-top: 5vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.4rem;
+    white-space: nowrap;
+
+    /* height: 6vh; width:25vh; */
+    border-radius: 25px;
+    padding: 1vh 4vh;
+
+    gap:5%;
+
+    border: 0.75vh double transparent;
+    
+    background-origin:border-box ;
+    background-clip: padding-box, border-box;
+    background-size: 400%;
+    
+    animation: grad-move 3.5s ease infinite;
+
+    background-image: 
+    linear-gradient(#222222, #222222),
+    linear-gradient(
+        90deg,
+        hsl(168deg 74% 54%) 0%,
+        hsl(176deg 100% 42%) 26%,
+        hsl(182deg 100% 42%) 39%,
+        hsl(186deg 100% 44%) 50%,
+        hsl(190deg 100% 44%) 61%,
+        hsl(193deg 99% 45%) 74%,
+        hsl(200deg 72% 56%) 100%
+    );
+}
+
+.download-button svg {
+    height: 6vh;
+    fill: white;
+}
+
 
 /* Shared */
 
