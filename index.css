@@ -15,6 +15,8 @@
     box-sizing: border-box;
 
     scroll-behavior: smooth;
+
+    /* outline: 1px solid #f00 !important; */
  }
 
  a {
@@ -30,12 +32,13 @@
 
  main {
     flex: 1;
+    width: 100vw;
  }
 
 
 section {
     padding: 5vh 1vw;
-    width: 100%;
+    width: 100vw;
     background: var(--main-bg);
 }
 
@@ -43,7 +46,7 @@ section:nth-child(2n) {
     background: var(--secondary-bg);
 }
 
-section, .section-shadow{ 
+section, .section-shadow{
     /* box-shadow: 0px 1px 2px var(--theme-main-color); */
     border-bottom: 0.1vh solid #34e0be;
 }
@@ -51,8 +54,8 @@ section, .section-shadow{
 
 /* Headder Style*/
 header {
+    width: 100vw;
     background: #222222;
-    z-index: 1000;
 }
 
 
@@ -70,7 +73,7 @@ header {
 
 .hamMenu {
     padding: 2% 0 0;
-    background: 
+    background:
     linear-gradient(
         0deg,
         hsl(284deg 60% 50%) 0%,
@@ -80,7 +83,7 @@ header {
         hsl(279deg 100% 24%) 51%,
         hsl(273deg 100% 20%) 64%,
         hsl(0deg 0% 0%) 99%
-      
+
     );
     width: 100%;
 }
@@ -89,7 +92,7 @@ header {
     appearance: none;
     display: block;
     margin: auto;
-    
+
     padding: 0.5em 1.25em;
     cursor: pointer;
     -webkit-tap-highlight-color: transparent;
@@ -125,7 +128,7 @@ header {
     font-weight: bold;
     text-shadow: 1px 1px 5px var(--theme-main-color);
 
- 
+
 
     transition: max-height 0.5s, transform 0.001s;
 }
@@ -169,7 +172,7 @@ header {
     white-space: nowrap;
     border-right: 0.10em solid var(--theme-main-color);
     margin: 0 auto;
-    animation: 
+    animation:
     coding 2.0s steps(23, end),
     cursor-blink .5s step-end infinite;
 }
@@ -206,17 +209,17 @@ header {
     gap: 1vw;
 
     border: 0.75vh double transparent;
-    
+
     background-origin:border-box ;
     background-clip: padding-box, border-box;
     background-size: 400%;
-    
+
     animation: grad-move 3.5s ease infinite;
 }
 
 .btn-in {
     fill: #007bb5;
-    background-image: 
+    background-image:
     linear-gradient(#222222, #222222),
     linear-gradient(
         45deg,
@@ -232,7 +235,7 @@ header {
 
 .btn-git{
     fill: #c9510c;
-    background-image: 
+    background-image:
     linear-gradient(#222222, #222222),
     linear-gradient(
         45deg,
@@ -249,7 +252,7 @@ header {
 /* WhoAmI */
 
 #whoAmI{
-    width: 100%;
+    width: 100vw;
     color: white;
     font-family: 'Open Sans';
     text-align: justify;
@@ -268,7 +271,7 @@ header {
 #whoAmI h1 {
     font-family: 'Roboto Condensed';
     text-transform: uppercase;
-    text-shadow: 1px 1px  var(--theme-main-color);   
+    text-shadow: 1px 1px  var(--theme-main-color);
     text-align: center;
     font-size: 1.9rem;
     margin-bottom: 1vh;
@@ -278,10 +281,10 @@ header {
     width: 35vh;
     height: 35vh;
     border-radius: 50%;
-    border: 1vh solid transparent; 
+    border: 1vh solid transparent;
     overflow: hidden;
 
-    background-image: 
+    background-image:
     url(./assets/images/pfp-mini.jpg),
     linear-gradient(
         90deg,
@@ -309,15 +312,16 @@ header {
     color: white;
     font-family: 'Open Sans';
     text-align: center;
-    
+    width: 100vw;
 }
 
 #skills h1, #skills h2{
     text-transform: uppercase;
-    text-shadow: 1px 1px  var(--theme-main-color);   
-    
+    text-shadow: 1px 1px  var(--theme-main-color);
+
     font-size: 1.9rem;
     letter-spacing: 0.1em;
+    margin-bottom: 4vh;
 }
 
 #skills h2 {
@@ -332,7 +336,7 @@ header {
     flex-wrap: wrap;
     gap: 2em;
     justify-content: center;
-    margin-bottom: 7vh;
+    margin-bottom: 4vh;
 }
 
 .skill-container:last-child{
@@ -344,11 +348,11 @@ header {
     height: 16vh;
     position: relative;
     overflow: hidden;
-    
+
 }
 
 .skill-card-label {
-    appearance: none; 
+    appearance: none;
     width: 100%;
     height: 100%;
 
@@ -372,7 +376,7 @@ header {
 
     height: 100%;
     width: 100%;
-    
+
     font-size: 1.1rem;
     color: black;
     font-weight: bold;
@@ -387,7 +391,7 @@ header {
 /* Projetos */
 
 #projects {
-    width: 100%;
+    width: 100vw;
     color: white;
     font-family: 'Open Sans';
     text-align: justify;
@@ -401,7 +405,7 @@ header {
 
 #projects h1{
     text-transform: uppercase;
-    text-shadow: 1px 1px  var(--theme-main-color);   
+    text-shadow: 1px 1px  var(--theme-main-color);
     font-size: 1.9rem;
     letter-spacing: 0.1em;
 
@@ -428,6 +432,10 @@ header {
 }
 
 .project-list{
+    /* outline: 1px blue solid;
+    /* width: 200px;
+     */
+     /* background: #F3E5AB;  */
     margin-top: 3vh;
     overflow: hidden;
 
@@ -444,17 +452,17 @@ header {
 .slides{
     display: flex;
 
-    overflow-x: auto;
+    overflow-x: hidden;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
     /* touch-action: none; */
-} 
+}
 
 .slides::-webkit-scrollbar {
     display: none;
 }
 
-.slides > article {    
+.slides > article {
     flex-shrink: 0;
     width: 100vw;
 
@@ -477,9 +485,10 @@ header {
     color: black;
     font-size: 1rem;
     cursor: pointer;
-   
+
     overflow: hidden;
-    
+
+
     box-shadow: 0px 1px 5px var(--theme-main-color);
 }
 
@@ -502,12 +511,12 @@ header {
 
 .project-card-wip::after{
     content: "EM PROGRESSO...";
-    
+
 }
 
 .project-card-body {
     background: rgb(150, 150, 150);
-    
+
     padding: 1.5vh 5%;
     font-weight: 500;
 
@@ -536,6 +545,7 @@ header {
 /* JOBS */
 
 #jobs {
+    width: 100vw;
     padding: 5vh 5%;
     font-family: 'Roboto Condensed';
     color: white;
@@ -566,11 +576,11 @@ header {
 .job-contents > div {
     flex-shrink: 0;
     /* height: 100%; */
-    width: 100%; 
-    
+    width: 100%;
+
     overflow-y: auto;
     scroll-snap-type: Y mandatory;
-    scroll-behavior: smooth;   
+    scroll-behavior: smooth;
 
     transition: max-height 0.25s ease-in;
 }
@@ -610,7 +620,7 @@ header {
 
 .job-exp-wrapper > h3 > span {
     font-size: 1.5rem;
-    text-shadow: 1px 1px 4px var(--theme-main-color);   
+    text-shadow: 1px 1px 4px var(--theme-main-color);
 }
 
 .job-exp-wrapper > h4 {
@@ -642,14 +652,14 @@ header {
     gap:5%;
 
     border: 0.75vh double transparent;
-    
+
     background-origin:border-box ;
     background-clip: padding-box, border-box;
     background-size: 400%;
-    
+
     animation: grad-move 3.5s ease infinite;
 
-    background-image: 
+    background-image:
     linear-gradient(#222222, #222222),
     linear-gradient(
         90deg,
@@ -676,3 +686,126 @@ header {
     50%  { background-position: 100% 50%;}
     100% { background-position: 0 50%;}
    }
+
+/* Imports */
+
+@import url(MQ.css);
+
+@media (min-width:768px) {
+
+    .btn-cont {
+        max-width: 70%;
+    }
+
+    /* Whoami */
+
+    #whoAmI{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #whoAmI > article {
+        max-width: 80%;
+    }
+
+    /* skiills */
+
+    #skills > h2 {
+        margin-bottom: 2.5vh;
+    }
+
+    /* projects */
+
+    .project-card{
+        max-width: 35%;
+    }
+
+    /* jobs */
+    .job-contents {
+        max-width: 65%;
+        margin: 0 auto;
+    }
+}
+
+@media (min-width: 992px) {
+
+    /* Headder */
+
+    header {
+        padding: 1vh 2rem ;
+        display: flex;
+        justify-content: space-between;
+
+        background: black;
+    }
+
+    .name-logo {
+        display: inline-block;
+        padding: 0;
+    }
+
+    .hamMenu {
+        display: inline-block;
+        background:black;
+        padding: 0;
+        width: auto;
+    }
+
+    .hamMenu-itens {
+        display: inline-flex;
+        flex-direction: row;
+        gap: 4vw;
+        max-height: 100%;
+    }
+    .hamMenu-check {
+        display: none;
+    }
+
+    .hamMenu-itens > a {
+        font-size: 1.1rem;
+    }
+
+    /* WhoAmi */
+
+    .btn-cont {
+        max-width: 55%;
+    }
+
+    .btn-cont a {
+        padding: 1.5vh 2.5vw;
+    }
+
+    #whoAmI > article {
+        max-width: 70%;
+    }
+
+    /* projects */
+
+    .project-card{
+    max-width: 27%;
+    }
+}
+
+@media (min-width: 1440px) {
+    /* WhoAmI */
+
+    #whoAmI {
+        font-size: 1.2rem;
+    }
+
+    #whoAmI article {
+        align-items: baseline;
+    }
+
+    .btn-cont {
+        max-width: 40%;
+    }
+
+     /* projects */
+
+    .project-card{
+    max-width: 24%;
+    }
+
+}
