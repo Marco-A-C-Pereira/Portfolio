@@ -493,6 +493,12 @@ header {
 .project-card-title {
     background: rgb(110, 110, 110);
     min-height: 3.5vh;
+    max-height: 20vh;
+    overflow: hidden;
+}
+
+.project-card-title > img {
+    max-width: 100%;
 }
 
 .project-card-wip{
