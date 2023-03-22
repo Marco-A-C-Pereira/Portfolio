@@ -530,20 +530,24 @@ header {
     gap: 1vh;
 }
 
-.project-card-tags-vanilla{
+.project-card-tags {
     padding: 0.2rem 0.7rem;
-    background: #F3E5AB;;
     font-weight: bold;
     border-radius: 50px;
     box-shadow: 1px 0 5px rgba(0, 0, 0, 0.159);
 }
 
-.project-card-tags-angular{
-    padding: 0.2rem 0.7rem;
+.project-vanilla{
+    background: #F3E5AB;;
+
+}
+
+.project-typescript{
+    background: #007ACC;;
+}
+
+.project-angular{
     background: #DD1B16;
-    font-weight: bold;
-    border-radius: 50px;
-    box-shadow: 1px 0 5px rgba(0, 0, 0, 0.159);
 }
 
 /* JOBS */
